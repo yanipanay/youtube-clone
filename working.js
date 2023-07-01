@@ -39,7 +39,7 @@ async function getVideoDetails(VideoID){
 function addDataToUI(videoDetailsArray){
     for(let i=0;i<videoDetailsArray.length;i++){
         const videoDetails = videoDetailsArray[i];
-        console.log(videoDetails);
+        //console.log(videoDetails);
         const thumbnail = videoDetails.snippet.thumbnails.standard.url;
         const channelName =  videoDetails.snippet.channelTitle;
         const videoTitle = videoDetails.snippet.title;
