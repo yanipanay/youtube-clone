@@ -1,12 +1,12 @@
 
 
-const Apikey = "AIzaSyAmd_r5T89j5sG8ySj74aXvZyLS-oMxN0k" ;
+const Apikey = "AIzaSyDhHMiIteiRquDFjDp82pJ19UzsM8HTeE8";
 const base_url="https://www.googleapis.com/youtube/v3";
 const container=document.getElementById("video-container");
 
 
 async function getVideos(q){
-    const url=`${base_url}/search?key=${Apikey}&q=${""}&type=videos&maxResults=20`;
+    const url=`${base_url}/search?key=${Apikey}&q=${q}&type=videos&maxResults=20`;
     const response=await(fetch(url,{
         method:"get",
     }));
@@ -43,13 +43,13 @@ function addDataToUI(videoDetailsArray){
         const thumbnail = videoDetails.snippet.thumbnails.standard.url;
         const channelName =  videoDetails.snippet.channelTitle;
         const videoTitle = videoDetails.snippet.title;
-        const views=videoDetails.statistics.viewCount
-        const publishedDate=videoDetails.snippet.publishedAt
+        const views=videoDetails.statistics.viewCount;
+        const publishedDate=videoDetails.snippet.publishedAt;
+        const vidId=videoDetails.id;
 
 
         container.innerHTML+=`
-        <a href="/videoDetails.html">
-            <div class="video-box">
+            <div class="video-box" onclick="openVideoDetails('${vidId}')">
                 <div class="video-image">
                     <img src=${thumbnail} width="250" height="170" alt="">
                 </div>
@@ -70,11 +70,23 @@ function addDataToUI(videoDetailsArray){
                     </div>
                     </div>
                 </div>        
-            </div>
-        </a>`;
+            </div>`;
         //console.log(thumbnail,channelName,videoTitle,publishedDate, typeof publishedDate);
     }
 } 
+
+
+function openVideoDetails(videoId){
+    document.cookie = `videoid=${videoId}; path=/videoDetails.html`;
+    window.open("/videoDetails.html");
+}
+
+
+async function searchVideos() {
+    var x = document.getElementById("search-bar").value;
+    container.replaceChildren();
+    await getVideos(x);
+}
 
 
 

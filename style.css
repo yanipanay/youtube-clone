@@ -219,7 +219,80 @@ a {
     margin: 0px;
 }
 
+/* 
+*
+*  Video-details page
+*
+*/
 
+
+.play-container{
+    display: flex;
+    justify-content: center;
+    gap:35px;
+}
+
+.recommendations{
+    width:35%;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    
+}
+
+.rec-video-box{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.rec-video-box img{
+    border-radius: 10px;
+}
+
+.rec-video-description{
+    display: flex;
+    flex-direction: row;
+}
+
+.rec-video-description .avatar{
+    padding: 12px 12px 12px 0px;
+}
+
+.rec-video-description img{
+    border-radius: 50%;
+}
+
+.rec-video-box .rec-text-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.rec-video-title{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.rec-video-info{
+    font-size: 12px;
+    font-weight: 400;
+    color: #AAA;
+}
+
+.rec-video-info .rec-channel-name{
+    margin: 0px;
+}
+
+.rec-view-time{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+
+.rec-view-time *{
+    margin: 0px;
+}
 
 
 
