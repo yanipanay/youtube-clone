@@ -72,7 +72,8 @@ function addDataToUI(videoDetailsArray) {
 
 function openVideoDetails(videoId) {
   document.cookie = `videoid=${videoId}; path=/videoDetails.html`;
-  window.open("/videoDetails.html");
+  window.location.href = "/videoDetails.html";
+  // window.open("/videoDetails.html");
 }
 
 async function searchVideos() {
