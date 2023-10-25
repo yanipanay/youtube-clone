@@ -66,7 +66,7 @@ body{
     width: 70px;
     border-top-right-radius: 21.2px;
     border-bottom-right-radius: 21.2px;
-
+    cursor: pointer;
 }
 
 .center-nav .input input:focus{
@@ -198,19 +198,25 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap:15px;
+    gap:25px;
     overflow-y:scroll;
     height: 82vh;
+    row-gap: 40px;
 }
 
 .video-box{
     display: flex;
     flex-direction: column;
     width: 370px;
+    box-sizing: border-box;
 }
 
+
 .video-box img{
-    border-radius: 10px;
+    object-fit: cover;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 25px;
 }
 
 .video-description{
@@ -219,7 +225,7 @@ a {
 }
 
 .video-description .avatar{
-    padding: 12px 12px 12px 0px;
+    padding: 6px 12px 12px 6px;
 }
 
 .video-description img{
@@ -233,12 +239,14 @@ a {
 }
 
 .video-title{
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
 }
 
 .video-info{
-    font-size: 12px;
+    padding-top: 5px;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #AAA;
 }
@@ -358,8 +366,9 @@ iframe{
 }
 
 .player-video-title{
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-bottom: 5px;
 }
 
 .bottom-line{
@@ -368,6 +377,58 @@ iframe{
     font-size: 14px;
 }
 
+.bl-left img{
+    border-radius: 50%;
+}
+
+.channel-name{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.channel-subs{
+    font-size: 13px;
+    font-weight: 400;
+    color: #8c8c70;
+}
+
+
+.bl-left, .bl-right, .likes , .share, .save{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.likes span{
+    padding-right:10px ;
+    border-right: 1px solid grey;
+}
+
+.likes, .share, .save{
+    background-color: #2b2b22;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.dislike{
+    transform: rotate(180deg);
+}
+.views-and-text {
+    background-color: #3e3f3e;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.views-and-text p{
+    height: 60px;
+    overflow-y: hidden;
+}
+
+.numbers{
+    display: flex;
+    gap: 10px;
+}
 
 .left-line, .right-line{
     display: flex;
@@ -375,10 +436,6 @@ iframe{
     align-items: center;
 }
 
-.right-line .likes , .share, .save{
-    display: flex;
-    align-items: center;
-}
 
 .channel-details{
     display: flex;
@@ -409,7 +466,7 @@ iframe{
     font-weight: 500;
     padding: 10px 16px;
     background-color: #C00;
-    border-radius: 2px;
+    border-radius: 20px;
 }
 
 .channel-details-lower{
